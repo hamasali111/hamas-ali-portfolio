@@ -57,4 +57,4 @@ jobs:
           app-name: 'hamasali'
           slot-name: 'Production'
           package: .
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_A4BB12485A4146A4A4A1EAD017F29EDB }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_86096611A5C44524985A11DEC2510920 }}
