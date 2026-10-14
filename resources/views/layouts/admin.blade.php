@@ -20,6 +20,12 @@
             margin: 0;
             padding: 0
         }
+html,
+body {
+    overflow-x: hidden;
+    overflow-x: clip;
+    max-width: 100%
+}
 
         body {
             font-family: 'Inter', sans-serif;

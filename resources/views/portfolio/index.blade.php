@@ -58,11 +58,17 @@
             scroll-behavior: smooth
         }
 
+        html,
+        body {
+            overflow-x: hidden;
+            overflow-x: clip;
+            max-width: 100%
+        }
+
         body {
             background: var(--dark);
             font-family: 'Inter', sans-serif;
-            color: #e2e8f0;
-            overflow-x: hidden
+            color: #e2e8f0
         }
 
         ::selection {
@@ -109,6 +115,10 @@
             backdrop-filter: blur(20px);
             box-shadow: 0 2px 30px rgba(0, 0, 0, 0.4);
             padding: 0.8rem 0
+        }
+
+        .nav-logo {
+            white-space: nowrap
         }
 
         .nav-link {
@@ -865,6 +875,14 @@
             color: #fff
         }
 
+        /* Hide floating buttons when footer is in view (so they never cover footer links) */
+        body.footer-visible .whatsapp-btn,
+        body.footer-visible #backToTop {
+            opacity: 0 !important;
+            visibility: hidden !important;
+            pointer-events: none
+        }
+
         /* Hamburger */
         .hamburger {
             display: none;
@@ -889,11 +907,11 @@
 
         @media(max-width:768px) {
             .hamburger {
-                display: flex
+                display: flex !important
             }
 
             .desktop-nav {
-                display: none
+                display: none !important
             }
 
             .mobile-nav {
@@ -1105,9 +1123,8 @@
     <!-- Navbar -->
     <nav class="navbar" id="navbar">
         <div class="max-w-7xl mx-auto px-6 flex items-center justify-between">
-            <a href="#hero" class="text-xl font-bold font-heading">
-                <span class="grad-text">{ </span><span class="text-white">Hamas Ali</span><span class="text-gray-400">
-                    Dev</span><span class="grad-text"> }</span>
+            <a href="#hero" class="text-xl font-bold font-heading nav-logo">
+                <span class="grad-text">{ </span><span class="text-white">Hamas Ali</span><span class="text-gray-400"> Dev</span><span class="grad-text"> }</span>
             </a>
             <div class="desktop-nav flex items-center gap-8">
                 <a href="#about" class="nav-link">About</a>
@@ -1280,7 +1297,7 @@
                             <span class="font-semibold text-white">What I Do Best</span>
                         </div>
                         <div class="grid grid-cols-2 gap-3">
-                            @php $services = ['Full Stack Web Development','REST API Development','Database Design & Management','UI/UX Implementation','Website Performance Optimization','Clean Code & Code Review'] @endphp
+                            @php $services = ['WhatsApp AI Agents','n8n Workflow Automation','Laravel Web Development','REST API Development','Order Management Automation','AI Customer Support Systems'] @endphp
                             @foreach ($services as $s)
                                 <div class="flex items-center gap-2 text-sm text-gray-400">
                                     <i class="fas fa-check-circle" style="color:#6366f1"></i> {{ $s }}
@@ -1653,10 +1670,9 @@
             <div class="flex flex-col md:flex-row justify-between items-center gap-6">
                 <div>
                     <div class="text-xl font-bold font-heading mb-1">
-                        <span class="grad-text">{ </span><span class="text-white">Hamas Ali</span><span
-                            class="text-gray-400"> Dev</span><span class="grad-text"> }</span>
+                        <span class="grad-text">{ </span><span class="text-white">Hamas Ali</span><span class="text-gray-400"> Dev</span><span class="grad-text"> }</span>
                     </div>
-                    <p class="text-gray-500 text-sm">Building digital experiences that matter.</p>
+                    <p class="text-gray-500 text-sm">Websites built. Businesses automated.</p>
                 </div>
                 <div class="flex gap-3">
                     @if ($settings->get('github'))
@@ -1718,11 +1734,13 @@
         // Typed.js hero title
         const typed = new Typed('#typed', {
             strings: [
-                '{{ $settings->get('title', 'Full Stack Developer') }}',
+                '{{ $settings->get('title', 'Laravel Developer & n8n Automation Expert') }}',
+                'n8n Automation Expert',
+                'Laravel Web Developer',
+                'WhatsApp AI Agents',
+                'Business Automation',
                 'Laravel Expert',
-                'Problem Solver',
-                'Creative Coder',
-                'Open Source Enthusiast'
+                'Full Stack Developer'
             ],
             typeSpeed: 60,
             deleteSpeed: 35,
@@ -1843,6 +1861,16 @@
                 behavior: 'smooth'
             });
         }
+
+        // Hide floating buttons when footer is in view (so they never cover footer links)
+        (function () {
+            const footerEl = document.querySelector('footer');
+            if (footerEl && 'IntersectionObserver' in window) {
+                new IntersectionObserver((entries) => {
+                    document.body.classList.toggle('footer-visible', entries[0].isIntersecting);
+                }, { threshold: 0.02 }).observe(footerEl);
+            }
+        })();
 
         // Mobile menu
         function toggleMobile() {

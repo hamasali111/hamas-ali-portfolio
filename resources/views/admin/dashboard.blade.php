@@ -5,7 +5,7 @@
 
 @section('content')
 <!-- Stats Grid -->
-<div class="grid grid-cols-2 lg:grid-cols-4 xl:grid-cols-8 gap-4 mb-8">
+<div class="grid grid-cols-2 lg:grid-cols-4 xl:grid-cols-4 gap-4 mb-8">
   @php
   $statItems = [
     ['label'=>'Skills','value'=>$stats['skills'],'icon'=>'fa-code','color'=>'rgba(99,102,241,0.2)','iconColor'=>'#a5b4fc'],

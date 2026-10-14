@@ -10,10 +10,10 @@ class SettingSeeder extends Seeder
     public function run(): void
     {
         $settings = [
-            'name'         => 'Your Name',
-            'title'        => 'Full Stack Developer',
-            'tagline'      => 'I build things for the web.',
-            'bio'          => 'Passionate full stack developer with expertise in building modern web applications. I love turning complex problems into simple, beautiful, and intuitive solutions.',
+            'name'         => 'Hamas Ali',
+            'title'        => 'Laravel Developer & n8n Automation Expert',
+            'tagline'      => 'I build websites — and automate the business behind them.',
+            'bio'          => "I'm Hamas Ali, a Laravel web developer and n8n automation expert from Pakistan. I build modern web applications and AI-powered automation systems — from WhatsApp AI agents that take orders while you sleep, to n8n workflows that run your back office on autopilot.",
             'email'        => 'alihammasch@gmail.com',
             'phone'        => '+923089116512',
             'location'     => 'Pakistan',
