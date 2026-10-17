@@ -1114,27 +1114,6 @@
         }
     </style>
 </head>
-<link href="https://cdn.jsdelivr.net/npm/@n8n/chat/dist/style.css" rel="stylesheet" />
-<script type="module">
-  import { createChat } from 'https://cdn.jsdelivr.net/npm/@n8n/chat/dist/chat.bundle.es.js';
-  createChat({
-    webhookUrl: 'https://n8n.hamasali.dev/webhook/95304bfe-09bf-4681-bd89-34c348f5c638/chat',
-    mode: 'window',
-    showWelcomeScreen: false,
-    loadPreviousSession: false,
-    initialMessages: [
-      'Assalam-o-Alaikum! I am Hamas AI assistant.',
-      'Ask me about services, projects, or automation work.'
-    ],
-    i18n: { en: {
-      title: 'Chat with Hamas AI',
-      subtitle: 'Ask about services & projects',
-      inputPlaceholder: 'Type your question...'
-    }}
-  });
-</script>
-
-
 
 <body>
 
